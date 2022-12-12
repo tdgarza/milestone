@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario de datos</title>
+</head>
+<body>
+	<form id="formulario">
+		<label for="nombre">Nombre:</label><br>
+		<input type="text" id="nombre" name="nombre"><br>
+		<label for="apellido">Apellido:</label><br>
+		<input type="text" id="apellido" name="apellido"><br>
+		<label for="edad">Edad:</label><br>
+		<input type="number" id="edad" name="edad"><br>
+		<label for="email">Email:</label><br>
+		<input type="email" id="email" name="email"><br>
+		<input type="submit" value="Guardar datos">
+	</form>
+    <script>
+        const formulario = document.querySelector('#formulario');
+        formulario.addEventListener('submit', guardarDatos);
+        
+        function guardarDatos(e){
+            e.preventDefault();
+            const nombre = document.querySelector('#nombre').value;
+            const apellido = document.querySelector('#apellido').value;
+            const edad = document.querySelector('#edad').value;
+            const email = document.querySelector('#email').value;
+            
+            const datos = {
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                email: email
+            }
+            
+            const datosJSON = JSON.stringify(datos);
+            
+            const fs = require('fs');
+            fs.writeFileSync('./data.json', datosJSON);
+            
+            alert('Datos guardados en el archivo data.json');
+        }
+    </script>
+</body>
+</html>    

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guardar datos en JSON</title>
+</head>
+<body>
+  <h1>Guardar datos en JSON</h1>
+  
+  <form id="formulario">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre"><br><br>
+    
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad" name="edad"><br><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    
+    <input type="submit" value="Guardar datos">
+  </form>
+  
+  <script>
+    // Obtener una referencia al formulario
+    const formulario = document.getElementById('formulario');
+    
+    // Añadir un manejador de eventos para el evento submit del formulario
+    formulario.addEventListener('submit', function(evento) {
+      // Prevenir la acción por defecto del formulario (enviar los datos a otra página)
+      evento.preventDefault();
+      
+      // Obtener los valores de los campos del formulario
+      const nombre = document.getElementById('nombre').value;
+      const edad = document.getElementById('edad').value;
+      const email = document.getElementById('email').value;
+      
+      // Crear un objeto con los datos del formulario
+      const datos = {
+        nombre: nombre,
+        edad: edad,
+        email: email
+      };
+      
+      // Convertir el objeto a una cadena de texto en formato JSON
+      const datosJSON = JSON.stringify(datos);
+      
+      // Crear un archivo JSON con el contenido de la cadena de texto
+      // (en este caso, simplemente mostramos el contenido del archivo en la consola)
+      const archivo = new Blob([datosJSON], { type: 'application/json' });
+      console.log(archivo);
+    });
+  </script>
+</body>
+</html>
