@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Obtenemos los parámetros de la URL
+var params = new URLSearchParams(window.location.search);
+
+// Obtenemos los valores de x1 y x2
+var x1 = params.get('x1');
+var x2 = params.get('x2');
+
+// Mostramos los resultados en pantalla
+document.write('Solución 1: ' + x1 + '<br>');
+document.write('Solución 2: ' + x2 + '<br>');
+</script>
+</body>
+</html>

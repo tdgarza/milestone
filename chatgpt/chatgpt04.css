@@ -1,0 +1,37 @@
+/* Estilo general para todos los elementos del formulario */
+form * {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para los label */
+  form label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Estilo para los input */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilo para el botón de enviar */
+  form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para los mensajes de error */
+  form .error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+  }
+  

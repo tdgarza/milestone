@@ -1,0 +1,13 @@
+[
+    {
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "correo": "juan.perez@gmail.com"
+    },
+    {
+      "nombre": "Ana",
+      "apellido": "García",
+      "correo": "ana.garcia@gmail.com"
+    }
+  ]
+  

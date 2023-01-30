@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" name="apellido"><br><br>
+        <input type="submit" value="Submit">
+      </form> 
+      <script>
+        function enviarFormulario(evento) {
+  evento.preventDefault(); // Evita que se envíe el formulario de forma tradicional
+
+  // Recopila los datos del formulario
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+
+  // Crea la solicitud AJAX
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "procesar_formulario.php");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // La solicitud se ha completado con éxito
+      console.log("Los datos se han insertado en la base de datos");
+    } else {
+      // Ha ocurrido un error
+      console.error("Se ha producido un error al enviar la solicitud");
+}
+};
+xhr.send(nombre=${nombre}&apellido=${apellido}); // Envía los datos del formulario al archivo PHP
+}
+
+      </script>
+</body>
+</html>

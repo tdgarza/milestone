@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+form {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+input[type="text"], textarea {
+background-color: #cccccc;
+border: none;
+padding: 10px;
+}
+
+input[type="submit"] {
+background-color: #666666;
+border: none;
+padding: 10px;
+}
+</style>
+
+</head>
+<body>
+<form action="submit.json" method="post">
+    <label for="name">Nombre:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Correo Electrónico:</label><br>
+    <input type="text" id="email" name="email"><br>
+    <label for="phone">Teléfono:</label><br>
+    <input type="text" id="phone" name="phone"><br>
+    <label for="dob">Fecha de Nacimiento:</label><br>
+    <input type="text" id="dob" name="dob"><br>
+    <label for="gender">Género:</label><br>
+    <input type="text" id="gender" name="gender"><br><br>
+    <input type="submit" value="Enviar">
+</form> 
+<script>
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const userData = {};
+    formData.forEach((value, key) => {
+        userData[key] = value;
+    });
+    const userDataJSON = JSON.stringify(userData);
+    // aquí se puede enviar el userDataJSON a un archivo o servidor
+});
+</script>
+</body>
+</html>

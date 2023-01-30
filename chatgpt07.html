@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        <label>Coeficiente a:</label>
+        <input type="text" id="a" name="a">
+        <br>
+        <label>Coeficiente b:</label>
+        <input type="text" id="b" name="b">
+        <br>
+        <label>Coeficiente c:</label>
+        <input type="text" id="c" name="c">
+        <br>
+        <button type="button" onclick="calcularFormulaGeneral()">Calcular</button>
+      </form>
+      
+
+<script>
+        document.getElementById('formulario').addEventListener('submit', function(e) {
+        // Prevenimos el envío del formulario
+        e.preventDefault();
+        
+        // Obtenemos los valores de los coeficientes
+        var a = document.getElementById('a').value;
+        var b = document.getElementById('b').value;
+        var c = document.getElementById('c').value;
+        
+        // Convertimos los valores a números
+        a = parseFloat(a);
+        b = parseFloat(b);
+        c = parseFloat(c);
+        
+        // Calculamos la fórmula general y obtenemos las soluciones
+        var soluciones = calcularFormulaGeneral(a, b, c);
+        
+        // Aquí puedes hacer algo con las soluciones, como mostrarlas en pantalla o enviarlas a otra página HTML
+      });
+    function calcularFormulaGeneral(a, b, c) {
+  // Calculamos el discriminante
+  var discriminante = b*b - 4*a*c;
+  
+  // Si el discriminante es menor que cero, no hay solución real
+  if (discriminante < 0) {
+    return {
+      x1: null,
+      x2: null
+    };
+  }
+  
+  // Si el discriminante es igual a cero, hay una solución real
+  if (discriminante === 0) {
+    var x = -b / (2 * a);
+    return {
+      x1: x,
+      x2: x
+    };
+  }
+  
+  // Si el discriminante es mayor que cero, hay dos soluciones reales
+  var x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+  var x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+  return {
+    x1: x1,
+    x2: x2
+  };
+}
+
+      // Redirigimos al usuario a la nueva página con los resultados en la URL
+window.location.href = 'resultados.html?x1=' + soluciones.x1 + '&x2=' + soluciones.x2;
+</script>
+</body>
+</html>
