@@ -1,0 +1,18 @@
+body{
+    background-color: #FFAAAA;
+
+
+}
+h1{
+    text-align: center;
+    color:rgb(130, 109, 130);
+}
+img{
+    width: 1000px;
+    height: 1000px;
+
+}
+.image{
+    width: 600px;
+    height: 300px;
+}
