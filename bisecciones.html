@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bisecciones.css">
     <link href="https://fonts.cdnfonts.com/css/maxhild" rel="stylesheet">
-                
+    <link href="https://fonts.cdnfonts.com/css/megilan" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/along-sans-s2" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/i-suck-at-golf" rel="stylesheet">         
     <title>Bisecciones Sucesivas</title>
 </head>
@@ -25,20 +26,30 @@
         Por lo tanto, haga xl = xr y vuelva al paso 2.
         c) Si f(xl)f(xr) = 0, la raíz es igual a xr; termina el cálculo.
         </h4> 
-        <table border="1">
+        <table border="1" colspacing="0" cellspacing="0" style="width: 300px;">
             <tr>
                 <th>Concepto</th>
                 <th>Valor</th>
             </tr>
             <tr>
-                <td>valor inicial Inferior (xl): </td>
-                <td><input id="xl"size="10"> </td>
+                <td>Valor inicial Inferior (xl): </td>
+                <td><input id="xl"size="15"> </td>
             </tr>
             <tr>
-                <td>valor inicial Superior (xu): </td>
-                <td><input id="xu"size="10"> </td>
+                <td>Valor inicial Superior (xu): </td>
+                <td><input id="xu"size="15"> </td>
             </tr>
         </table>
-        <button><type="button" onclick="bisecciones()">Presioname<br>Baby<br>hoy</button>
+        <br>
+        <button><type="button" onclick="bisecciones()">Presioname</button>
+        <script>
+            function bisecciones(){
+                var xl=document.getElementById("xl").value;
+                var xu=document.getElementById("xu").value;
+                console.log("El valor de xl: " +xl);
+                console.log("El valor de xu: " +xu);
+
+            }
+        </script>
 </body>
 </html>

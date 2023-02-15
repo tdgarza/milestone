@@ -1,15 +1,21 @@
 titulo{
     font-family: 'I suck at golf', sans-serif;
     font-family: 'Maxhild', sans-serif;
+    font-family: 'Along Sans s2', sans-serif;
     color: black;
-    text-shadow: 5px 5px 5px gray;
+    text-shadow: 5px 5px 15px #ee8e17;
                                                 
     font-size: 70px;
     text-align: center;                                           
 }
 h3{
-    color: aqua;
+    color: #8B0000;
+    font-family: 'Megilan', sans-serif;
+                                                
 }
 body{
-    background-color: orange;
+    background-color: #ffe182;
+    color: #DC143C	;
+    background: linear-gradient(90deg, #72b2e4 0%, 
+    #92e1e2 35%, #72b2e4 100%);
 }
