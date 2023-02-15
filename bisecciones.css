@@ -1,0 +1,15 @@
+titulo{
+    font-family: 'I suck at golf', sans-serif;
+    font-family: 'Maxhild', sans-serif;
+    color: black;
+    text-shadow: 5px 5px 5px gray;
+                                                
+    font-size: 70px;
+    text-align: center;                                           
+}
+h3{
+    color: aqua;
+}
+body{
+    background-color: orange;
+}

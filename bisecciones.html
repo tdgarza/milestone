@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bisecciones.css">
+    <link href="https://fonts.cdnfonts.com/css/maxhild" rel="stylesheet">
+                
+    <link href="https://fonts.cdnfonts.com/css/i-suck-at-golf" rel="stylesheet">         
+    <title>Bisecciones Sucesivas</title>
+</head>
+<body>
+    <titulo>Bisecciones Sucesivas</titulo>
+    <h3>Tema 1</h3>
+    <h4>Paso 1: Elija valores iniciales inferior, xl, y superior, xu, que encierren la raíz, de forma tal que la función cambie de signo 
+        en el intervalo. Esto se verifica comprobando que f(xl) f(xu) < 0.</h4>
+        <h4>Paso 2: Una aproximación de la raíz xr se determina mediante:
+        xr=xl + xu/2
+        </h4>
+        <h4>Paso 3: Realice las siguientes evaluaciones para determinar en qué subintervalo está la raíz:
+        a) Si f(xl)f(xr) < 0, entonces la raíz se encuentra dentro del subintervalo inferior o izquierdo. 
+        Por lo tanto, haga xu = xr y vuelva al paso 2.
+        b) Si f(xl)f(xr) > 0, entonces la raíz se encuentra dentro del subintervalo superior o derecho. 
+        Por lo tanto, haga xl = xr y vuelva al paso 2.
+        c) Si f(xl)f(xr) = 0, la raíz es igual a xr; termina el cálculo.
+        </h4> 
+        <table border="1">
+            <tr>
+                <th>Concepto</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>valor inicial Inferior (xl): </td>
+                <td><input id="xl"size="10"> </td>
+            </tr>
+            <tr>
+                <td>valor inicial Superior (xu): </td>
+                <td><input id="xu"size="10"> </td>
+            </tr>
+        </table>
+        <button><type="button" onclick="bisecciones()">Presioname<br>Baby<br>hoy</button>
+</body>
+</html>

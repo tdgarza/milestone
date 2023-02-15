@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="07-MetodosNumericos01.css">
+    <title>Metodo de la Biseccion</title>
+</head>
+<body>
+    <h1>Metodo de la Biseccion Sucesiva</h1>
+<h4>Paso 1: Elija valores iniciales inferior, xl, y superior, xu, que encierren la raíz, de forma tal que la función cambie de signo 
+en el intervalo. Esto se verifica comprobando que f(xl) f(xu) < 0.</h4>
+<h4>Paso 2: Una aproximación de la raíz xr se determina mediante:
+xr=xl + xu/2
+</h4>
+<h4>Paso 3: Realice las siguientes evaluaciones para determinar en qué subintervalo está la raíz:
+a) Si f(xl)f(xr) < 0, entonces la raíz se encuentra dentro del subintervalo inferior o izquierdo. 
+Por lo tanto, haga xu = xr y vuelva al paso 2.
+b) Si f(xl)f(xr) > 0, entonces la raíz se encuentra dentro del subintervalo superior o derecho. 
+Por lo tanto, haga xl = xr y vuelva al paso 2.
+c) Si f(xl)f(xr) = 0, la raíz es igual a xr; termina el cálculo.
+</h4> 
+
+
+    <p style="background-color: blue; color: rgb(245, 246, 253); font-size:20px">Planteamiento del problema.</p> 
+  <p>  Utilice el método gráfico para determinar el coeficiente de arrastre c 
+    necesario para que un paracaidista de masa m = 68.1 kg tenga una velocidad de 40 m/s después de una 
+    caída libre de t = 10 s. Nota: La aceleración de la gravedad es 9.8 m/s2.
+</p>
+<p>Por favor, introduce dos números:</p>  
+<p style="background-color: crimson; color: #f1f1f1; font-weight: bold; font-size:20px">Funcion:<br></p>
+<img src="./formula1.png" style="width: 230px"; alt="formula">
+<br>
+<table>
+    <tr>
+    <th>Concepto</th>
+    <th>Valor</th>
+    </tr>
+
+    
+<tr>
+    <td>Valor inicial inferior (xl): </td>
+    <td><input id="xl" size="5"><br> </td> 
+</tr>
+<tr>
+    <td>Valor inicial superior (xu): </td>
+    <td><input id="xu" size="5"><br></td>
+    </tr>
+</tr>
+</table>
+<button type="button" onclick="bisectionMethod()">Procesar</button>  
+
+<p style="background-color: yellow; color: #f1f1f1; font-weight: bold; color: black; font-size:20px" id="sumando">Resultado: </p>  
+<h1>Metodos numericos de 3A</h1>
+<script>
+function bisectionMethod() {
+  const g = 9.8;
+  const t = 10;
+  const m = 68.1;
+  const v = 40;
+  const xl = document.getElementById("xl").value;  
+  const xu = document.getElementById("xu").value;
+
+  let iterations = 10;
+  let xr = 0;
+
+  for (let i = 0; i < iterations; i++) {
+    xr = (parseFloat(xl) + parseFloat(xu)) / 2;
+    let fxl = calculateFunctionValue(xl, g, m, t, v);
+    let fxu = calculateFunctionValue(xu, g, m, t, v);
+    let fxr = calculateFunctionValue(xr, g, m, t, v);
+    if (fxl * fxr < 0) {
+      xu = xr;
+    } else if (fxr * fxu < 0) {
+      xl = xr;
+    } else {
+      break;
+    }
+  }
+
+  updateTable(xl, xu, xr);
+  updateResult(xr);
+}
+
+function calculateFunctionValue(x, g, m, t, v) {
+  let exponent = -(x / m) * t;
+  let e = Math.exp(exponent);
+  let division = g * m;
+  let cociente = division / x;
+  return cociente * (1 - e) - v;
+}
+
+function updateTable(xl, xu, xr) {
+  const table = document.createElement("table");
+  const tableBody = document.createElement("tbody");
+  const row = document.createElement("tr");
+
+  const cellXl = document.createElement("td");
+  const textXl = document.createTextNode("El valor de Xl: " + xl);
+  cellXl.appendChild(textXl);
+  row.appendChild(cellXl);
+
+  const cellXu = document.createElement("td");
+  const textXu = document.createTextNode("El valor de Xu: " + xu);
+  cellXu.appendChild(textXu);
+  row.appendChild(cellXu);
+
+  const cellXr = document.createElement("td");
+  const textXr = document.createTextNode("El valor de Xr: " + xr);
+  cellXr.appendChild(textXr);
+  row.appendChild(cellXr);
+
+  tableBody.appendChild(row);
+  table.appendChild(tableBody);
+  document.getElementsByTagName("body")[0].appendChild(table);
+}
+
+function updateResult(result) {
+  document.getElementById("sumando").innerHTML = result;
+}
+
+</script>
+</body>
+</html>
