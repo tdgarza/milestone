@@ -33,22 +33,45 @@
             </tr>
             <tr>
                 <td>Valor inicial Inferior (xl): </td>
-                <td><input id="xl"size="15"> </td>
+                <td><input id="xl" name="low" size="15"> </td>
             </tr>
             <tr>
                 <td>Valor inicial Superior (xu): </td>
-                <td><input id="xu"size="15"> </td>
+                <td><input id="xu" name="up" size="15"> </td>
             </tr>
         </table>
         <br>
-        <button><type="button" onclick="bisecciones()">Presioname</button>
+        <button><type="button" onclick="bisecciones()">Presioname</button> 
         <script>
             function bisecciones(){
-                var xl=document.getElementById("xl").value;
-                var xu=document.getElementById("xu").value;
-                console.log("El valor de xl: " +xl);
-                console.log("El valor de xu: " +xu);
+                var xl=parseInt(document.getElementById("xl").value);
+                var xu=parseInt(document.getElementById("xu").value);
+               
+                var body=document.getElementsByName("body")[0];
+                var tabla=document.createElement("table");
+                var tblBody=document.createElement("tbody");
+                var hilera=document.createElement("tr");
 
+                for(i=0; i<10;i++){
+                var xr=(xu+xl)/2;
+                var fxl=Math.log(xl);
+                var fxr=Math.log(xr);
+                console.log("El valor de fxl es: "+fxl+" unidades.");
+                console.log("El valor de fxr es: "+fxr+" unidades.");
+
+                if(fxr*fxl<0){
+                    xu=xr;
+                    console.log("El valor de xu es: " +xu);
+                }
+                if(fxr*fxl>0){
+                    xl=xr;
+                    console.log("El valor de xl es: " +xl);
+                }
+                if(fxr*fxl==0){
+                    console.log("Este es el tercer if ")
+                }
+                
+            }
             }
         </script>
 </body>
