@@ -1,0 +1,23 @@
+body{
+    background-color: #a7d6d0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+th{
+    background-color: #f47b2f
+    ;
+}
+table{
+    margin-left: 200px;
+}
+img{
+    margin:5px 5px 5px 5px;
+}
+titulo1{
+    font-family: 'Luar Galaxy Outline', sans-serif;
+    font-family: 'Luar Galaxy', sans-serif;
+    font-family: 'Luar Galaxy Shadow', sans-serif;
+font-size: 50px;
+color: #f47b2f;
+text-align: center;
+margin-left: 200px;
+}
