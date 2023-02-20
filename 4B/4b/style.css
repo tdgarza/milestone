@@ -15,3 +15,18 @@ titulo{
 	align-content: center;
                                                 
 }
+table{
+	margin-left: 200px;
+	background-color: grey; 
+	color: white; 
+	text-align: center; 
+	width: 700px;
+}
+th{
+	color: black;
+}
+hamburguesa{
+	color: orange;
+	font-weight: 700;
+	font-family: Arial, Helvetica, sans-serif;
+}

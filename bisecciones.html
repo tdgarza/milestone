@@ -41,7 +41,8 @@
             </tr>
         </table>
         <br>
-        <button><type="button" onclick="bisecciones()">Presioname</button> 
+        <button type="button" onclick="bisecciones()">Presioname</button> 
+        <p id="biseccionesresultado">Resultado: </p>
         <script>
             function bisecciones(){
                 var xl=parseInt(document.getElementById("xl").value);
@@ -70,9 +71,33 @@
                 if(fxr*fxl==0){
                     console.log("Este es el tercer if ")
                 }
-                
+                var hilera=document.createElement("tr");
+                for(j=0;i<1;j++){
+                    var celda=document.createElement("td");
+                    var textoCelda=document.createTextNode("El valor de Xl: "+xl);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                for(k=0;k<1;k++){
+                    var celda=document.createElement("td");
+                    var textoCelda=document.createTextNode("El valor de Xu: "+xu);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+
+                for(l=0;l<1;l++){
+                    var celda=document.createElement("td");
+                    var textoCelda=document.createTextNode("El valor de Xr: "+xr);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }}
+                tblBody.appendChild(hilera);
             }
-            }
+            var text=xr;
+            document.getElementById("biseccionesresultado").innerHTML=text;
+        }
+        tabla.appendChild(tblBody);
+        body.appendChild(tabla);
+        tabla.setAttribute("border","1");
+    }
         </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Orden de restaurante</title>
+</head>
+<body>
+  <h1>Orden de restaurante</h1>
+  <form id="order-form">
+    <div>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="table-number">Número de mesa:</label>
+      <input type="number" id="table-number" name="table-number" required>
+    </div>
+    <div>
+      <label for="food">Comida:</label>
+      <input type="text" id="food" name="food" required>
+    </div>
+    <div>
+      <label for="drink">Bebida:</label>
+      <input type="text" id="drink" name="drink" required>
+    </div>
+    <div>
+      <label for="notes">Notas:</label>
+      <textarea id="notes" name="notes"></textarea>
+    </div>
+    <button type="submit">Hacer pedido</button>
+  </form>
+  <script src="orden.js"></script>
+</body>
+</html>
