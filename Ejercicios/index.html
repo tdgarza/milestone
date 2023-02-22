@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurante</title>
+</head>
+<body>
+	<form action="guardar-orden.php" method="post">
+		<label for="name">Nombre:</label>
+		<input type="text" id="name" name="name"><br><br>
+
+		<label for="email">Correo Electrónico:</label>
+		<input type="email" id="email" name="email"><br><br>
+
+		<label for="phone">Teléfono:</label>
+		<input type="text" id="phone" name="phone"><br><br>
+
+		<label for="food">Comida:</label>
+		<input type="text" id="food" name="food"><br><br>
+
+		<label for="quantity">Cantidad:</label>
+		<input type="number" id="quantity" name="quantity" min="1" value="1"><br><br>
+
+		<button type="button" onclick="saveOrder()">Enviar Orden</button>
+        <button onclick="guardarOrden()">Guardar orden</button>
+	</form>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Correo Electrónico</th>
+				<th>Teléfono</th>
+				<th>Comida</th>
+				<th>Cantidad</th>
+			</tr>
+		</thead>
+		<tbody id="ordersTable">
+		</tbody>
+	</table>
+    
+
+	<script src="orders.js"></script>
+
+</body>
+</html>
