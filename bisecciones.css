@@ -3,9 +3,9 @@ titulo{
     font-family: 'Maxhild', sans-serif;
     font-family: 'Along Sans s2', sans-serif;
     color: black;
-    text-shadow: 5px 5px 15px #ee8e17;
+    text-shadow: 5px 5px 5px #1e1447;
                                                 
-    font-size: 70px;
+    font-size: 40px;
     text-align: center;                                           
 }
 h3{
@@ -14,7 +14,11 @@ h3{
                                                 
 }
 body{
-    background-color: #ffe182;
+    background-color: #a9d5f9;
     color: #DC143C	;
 
+}
+li{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
 }
