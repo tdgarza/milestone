@@ -42,62 +42,80 @@
         </table>
         <br>
         <button type="button" onclick="bisecciones()">Presioname</button> 
-        <p id="biseccionesresultado">Resultado: </p>
+        <p id="sumando">Resultado: </p>
         <script>
             function bisecciones(){
                 var xl=parseInt(document.getElementById("xl").value);
                 var xu=parseInt(document.getElementById("xu").value);
                
-                var body=document.getElementsByName("body")[0];
+                var body=document.getElementsByTagName("body")[0];
                 var tabla=document.createElement("table");
                 var tblBody=document.createElement("tbody");
                 var hilera=document.createElement("tr");
-
-                for(i=0; i<10;i++){
+                
+                
+                do{
+                
                 var xr=(xu+xl)/2;
+                var xrant=xr;
+                var error1=Math.abs(((xr-xrant)/xr));
+                var error=error1*100;
+                console.log("El valor de xr: " +xr);
+                console.log("El valor de xrant: " +xrant);
+                console.log("El valor del error: "+error);
                 var fxl=Math.log(xl);
                 var fxr=Math.log(xr);
-                console.log("El valor de fxl es: "+fxl+" unidades.");
-                console.log("El valor de fxr es: "+fxr+" unidades.");
 
                 if(fxr*fxl<0){
                     xu=xr;
+                    xrant=xr;
                     console.log("El valor de xu es: " +xu);
                 }
                 if(fxr*fxl>0){
                     xl=xr;
+                    xrant=xr;
                     console.log("El valor de xl es: " +xl);
                 }
                 if(fxr*fxl==0){
                     console.log("Este es el tercer if ")
                 }
-                var hilera=document.createElement("tr");
-                for(j=0;i<1;j++){
-                    var celda=document.createElement("td");
-                    var textoCelda=document.createTextNode("El valor de Xl: "+xl);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
-                for(k=0;k<1;k++){
-                    var celda=document.createElement("td");
-                    var textoCelda=document.createTextNode("El valor de Xu: "+xu);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
+                
+                var hilera = document.createElement("tr");
 
-                for(l=0;l<1;l++){
-                    var celda=document.createElement("td");
-                    var textoCelda=document.createTextNode("El valor de Xr: "+xr);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
-                }}
-                tblBody.appendChild(hilera);
-            }
-            var text=xr;
-            document.getElementById("biseccionesresultado").innerHTML=text;
-        }
-        tabla.appendChild(tblBody);
-        body.appendChild(tabla);
-        tabla.setAttribute("border","1");
-    }
+for (var j = 0; j < 1; j++) {
+  var celda = document.createElement("td");
+  var textoCelda = document.createTextNode("El valor de Xl: "+xl);
+  celda.appendChild(textoCelda);
+  hilera.appendChild(celda);
+
+  for (var k = 0; k < 1; k++) {
+  var celda = document.createElement("td");
+  var textoCelda = document.createTextNode("El valor de Xu: "+xu);
+  celda.appendChild(textoCelda);
+  hilera.appendChild(celda);
+
+  for (var l = 0; l < 1; l++) {
+  var celda = document.createElement("td");
+  var textoCelda = document.createTextNode("El valor de Xr: "+xr);
+  celda.appendChild(textoCelda);
+  hilera.appendChild(celda);
+}
+for (var m = 0; m < 1; m++) {
+  var celda = document.createElement("td");
+  var textoCelda = document.createTextNode("El valor de erro: "+error);
+  celda.appendChild(textoCelda);
+  hilera.appendChild(celda);
+}}
+tblBody.appendChild(hilera);
+}
+  let text=xr;
+  document.getElementById("sumando").innerHTML = text;  
+} while(error<=0.01);
+tabla.appendChild(tblBody);
+body.appendChild(tabla);
+tabla.setAttribute("border", "1");
+
+}
         </script>
 </body>
 </html>

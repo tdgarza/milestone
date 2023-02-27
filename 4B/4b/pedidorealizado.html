@@ -34,5 +34,54 @@
 	</div>
 
 	<h1>PEDIDO REALIZADO</h1>
+	<h3>con exito</h3>
+
+	<ul>
+<p><strong>Nombre: </strong><span id="nombre"></span></p>
+<p><strong>Apellido: </strong><span id="apellido"></span></p>
+<p><strong>Telefono: </strong><span id="telefono"></span></p>
+<p><strong>Direccion: </strong><span id="direccion"></span></p>
+<p><strong>Colonia: </strong><span id="colonia"></span></p>
+<p><strong>Sexo: </strong><span id="sexo"></span></p>
+<p><strong>Menu: </strong><span id="menu"></span></p>
+
+<script type="text/javascript">
+	const orden=JSON.parse(localStorage.getItem("orden"));
+	document.getElementById("nombre").textContent=orden.nombre;
+	document.getElementById("apellido").textContent=orden.apellido;
+	document.getElementById("telefono").textContent=orden.telefono;
+	document.getElementById("direccion").textContent=orden.direccion;
+	document.getElementById("colonia").textContent=orden.colonia;
+	document.getElementById("sexo").textContent=orden.sexo;
+	document.getElementById("menu").textContent=orden.menu;
+
+
+</script>
+	</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

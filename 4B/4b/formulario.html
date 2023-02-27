@@ -35,7 +35,7 @@
 <h1>Formulario</h1>
 
 
-<form action="pedidorealizado.html" method="get">
+<form id="pedido">
 	<p>Nombre: <input type="text" name="nombre" id="nombre" size="40">
 	</p>	
 		<p>Apellido: <input type="text" name="apellido" id="apellido" size="40">
@@ -46,10 +46,49 @@
 	</p>
 		<p>Telefono: <input type="text" name="telefono" id="telefono" size="40">
 	</p>	
-	<p>Sexo: <input type="radio" name="sexo" value="Hombre"> <input type="radio" name="sexo" value="mujer">	<br><br>
-		<input type="submit" value="Pedido">
+	<p>Sexo: 
+		<morado><input type="radio" name="sexo" value="Hombre"> <rosa>Hombre</rosa></morado>
+		<input type="radio" name="sexo" value="mujer"><morado>Mujer</morado>	<br><br>
+	<p> Que vas a pedir: 
+		<select name="menu" id="menu">
+			<option value="hamburguesa">Hamburguesa</option>
+			<option value="Torta">Torta</option>
+			<option value="Tacos">Tacos</option>
+		</select>
+	</p>
+		<input type="submit" value="Enviar">
 		<input type="reset" value="Borrar">
 </form>
+<script type="text/javascript">
+	const form=document.getElementById("pedido");
+	form.addEventListener("submit", function(event){
+		event.preventDefault();
+		const formData=new FormData(form);
+		const orden={
+			nombre:formData.get("nombre"),
+			apellido:formData.get("apellido"),
+			telefono:formData.get("telefono"),
+			direccion:formData.get("direccion"),
+			colonia:formData.get("colonia"),
+			sexo:formData.get("sexo"),
+			menu:formData.get("menu")
+		};
+		localStorage.setItem("orden",JSON.stringify(orden));
+		window.location.href="pedidorealizado.html";
+	});
+
+	
+</script>
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
