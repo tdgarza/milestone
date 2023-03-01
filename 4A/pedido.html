@@ -37,17 +37,28 @@
         <p>Telefono: <input type="text" id="telefono" name="telefono" size="20"> </p>
         <p>Direccion: <input type="text" id="direccion" name="direccion" size="30"> </p>
         <p>Colonia: <input type="text" id="colonia" name="colonia" size="30"> </p>
-        <p>Sexo: <input type="radio" id="sexo" name="sexo" value="hombre">Hombre
-         <input type="radio" id="sexo" name="sexo" value="mujer">Mujer </p>
-         <p>Hamburguesa: 
-            <select name="menu" id="menu">
-                <option value="doble">Doble</option>
-                <option value="triple">Triple</option>
-                <option value="doble queso">Doble queso</option>
-            </select>
-         </p>
+        <hr>
+        <select name="menu" id="menu">
+            <optgroup label="Tortas">
+            <option value="hamburguesa">Hamburguesa</option>
+            <option value="clubsandwich">Club Sandwich</option>
+            <option value="tortasahogadas">Tortas ahogadas</option>
+            </optgroup>
+            <optgroup label="Tacos">
+                <option value="tacosbistek">Tacos de Bistek</option>
+                <option value="tacosalpastor">Tacos al Pastor</option>
+                <option value="sincronizada">Sincronizada</option>
+                </optgroup>
 
-
+        </select>
+         
+        <titulo1>Verduras</titulo1><br>
+         Vegetales: 
+         <input type="checkbox" id="tomate" checked><label for="tomate"> Tomate</label>
+         <input type="checkbox" id="cebolla" checked><label for="cebolla"> Cebolla</label>
+         <input type="checkbox" id="lechuga" checked><label for="lechuga"> Lechuga</label>
+         <input type="checkbox" id="pepinos" checked><label for="pepinos"> Pepinos</label>
+        
            <input type="submit" value="Enviar"> 
            <input type="reset" value="Borrar">
     </form>
@@ -62,8 +73,12 @@
                 telefono:formData.get("telefono"),
                 direccion:formData.get("direccion"),
                 colonia:formData.get("colonia"),
-                sexo:formData.get("sexo"),
-                menu:formData.get("menu")
+                menu:formData.get("menu"),
+               tomate:document.getElementById("tomate").checked ? "Si" : "No",
+               cebolla:document.getElementById("cebolla").checked ? "Si" : "No",
+               lechuga:document.getElementById("lechuga").checked ? "Si" : "No",
+               pepinos:document.getElementById("pepinos").checked ? "Si" : "No"
+
 
             };
             localStorage.setItem("orden",JSON.stringify(orden));

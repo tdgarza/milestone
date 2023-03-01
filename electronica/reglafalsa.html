@@ -53,20 +53,25 @@
         <div class="container">
           <h1 class="display-4"><titulo>Regla Falsa</titulo></h1>
           <p class="lead"> <h3>Tema 2</h3></p>
+          <table>
+
+            <tr>
+              <td>
+                <p>Un inconveniente del método de bisección es que al dividir el intervalo de xl a xu en mitades iguales, no se toman en consideración las magnitudes de f(xl) y f(xu). Por ejem- plo, si f(xl) está mucho más cercana a cero que f(xu), es lógico que la raíz se encuentre más cerca de xl que de xu (figura 5.12). </p>
+                <p>Un método alternativo que aprovecha esta visualización gráfica consiste en unir f(xl) y f(xu) con una línea recta. La intersección de esta línea con el eje de las x representa una mejor aproximación de la raíz. El hecho de que se reemplace la curva por una línea recta da una “falsa posición” de la raíz; de aquí el nombre de método de la falsa posición, o en latín, regula falsi. También se le conoce como método de interpolacion lineal.</p>
+              </td>
+              <td><img src="/milestone/electronica/img/graficafalsaposicion.png" style="width: 300px;"></td>
+            </tr>
+            <tr>
+              <td>
+                <p>Ésta es la fórmula de la falsa posición. El valor de xr calculado con la ecuación (5.7), reemplazará, después, a cualquiera de los dos valores iniciales, xl o xu, y da un valor de la función con el mismo signo de f(xr). De esta manera, los valores xl y xu siempre encierran la verdadera raíz. El proceso se repite hasta que la aproximación a la raíz sea adecuada.</p>
+
+              </td>
+              <td><img src="/milestone/electronica/img/formulafalsaposicion.png" style="width: 300px;"></td>
+            </tr>
+          </table>
       
-    <h4>Paso 1: Elija valores iniciales inferior, xl, y superior, xu, que encierren la raíz, de forma tal que la función cambie de signo 
-        en el intervalo. Esto se verifica comprobando que f(xl) f(xu) < 0.</h4>
-        <h4>Paso 2: Una aproximación de la raíz xr se determina mediante:
-        xr=xl + xu/2
-        </h4>
-        <h4>Paso 3: Realice las siguientes evaluaciones para determinar en qué subintervalo está la raíz:
-        a) Si f(xl)f(xr) < 0, entonces la raíz se encuentra dentro del subintervalo inferior o izquierdo. 
-        Por lo tanto, haga xu = xr y vuelva al paso 2.
-        b) Si f(xl)f(xr) > 0, entonces la raíz se encuentra dentro del subintervalo superior o derecho. 
-        Por lo tanto, haga xl = xr y vuelva al paso 2.
-        c) Si f(xl)f(xr) = 0, la raíz es igual a xr; termina el cálculo.
-        </h4> 
-        <br>
+    
         <table border="1" colspacing="0" cellspacing="0" style="width: 305px;">
             <tr>
                 <th>Concepto</th>
@@ -95,14 +100,20 @@
                 var hilera=document.createElement("tr");
                 
                 do{
-                var xr=(xu+xl)/2;
+                var fxl=Math.log(xl);
+                var fxu=Math.log(xu);
+                var fxr=Math.log(xr);
+                var multi=fxu*(xl-xu);
+                var divi=fxl-fxu;
+                var rest=multi/divi;
+                var xr=xu-rest;
+
                 var error1=Math.abs(((xr-xrant)/xr));
                 var error=error1*100;
                 console.log("El valor de xr: " +xr);
                 console.log("El valor de xrant: " +xrant);
                 console.log("El valor del error: "+error);
-                var fxl=Math.log(xl);
-                var fxr=Math.log(xr);
+                
 
                 if(fxr*fxl<0){
                     xu=xr;
