@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina de Analisis Numerico</title>
+</head>
+<body>
+  <div style="margin: 5px;">
+    <nav class="navbar navbar-light" style="background-color: #9bc6e5;">
+
+    <div class="container">
+    <a class="navbar-brand" href="#">Inicio</a>
+  
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="nav navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Unidad 2
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/milestone/electronica/bisecciones.html">Metodo de la Biseccion</a><br>
+              <a class="dropdown-item" href="#">Regla Falsa</a><br>
+              <a class="dropdown-item" href="#">Metodo de Newton</a><br>
+              <a class="dropdown-item" href="#">Metodo de la Secante</a><br>
+
+            </div>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 3
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="interpolacionlineal.html">Interpolacion Lineal</a><br>
+            <a class="dropdown-item" href="lagrange.html">Interpolacion de Lagrange</a><br>
+            <a class="dropdown-item" href="interpolacionnewton.html">Interpolacion Newton</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 4
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Integracion Newton-Coates</a><br>
+            <a class="dropdown-item" href="#">Regla Trapecial</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 5
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="gauss.html">Eliminacion Gaussiana</a><br>
+            <a class="dropdown-item" href="gaussjordan.html">Gauss-Jordan</a><br>
+            <a class="dropdown-item" href="seidel.html">Gauss-Seidel</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 6
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="gaussseidel.html">Gauss-Seidel</a><br>
+            <a class="dropdown-item" href="newtonraphson.html">Newton-Raphson</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 7
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="euler.html">Metodo de Euler</a><br>
+            <a class="dropdown-item" href="runge.html">Metodo de Runge Kutta</a><br>
+            <a class="dropdown-item" href="dosecuaciones.html">Sistema de dos Ecuaciones</a><br>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+</div>
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4"><titulo>Bisecciones Sucesivas</titulo></h1>
+          <p class="lead"> <h3>Tema 1</h3></p>
+      
+    <h4>Paso 1: Elija valores iniciales inferior, xl, y superior, xu, que encierren la raíz, de forma tal que la función cambie de signo 
+        en el intervalo. Esto se verifica comprobando que f(xl) f(xu) < 0.</h4>
+        <h4>Paso 2: Una aproximación de la raíz xr se determina mediante:
+        xr=xl + xu/2
+        </h4>
+        <h4>Paso 3: Realice las siguientes evaluaciones para determinar en qué subintervalo está la raíz:
+        a) Si f(xl)f(xr) < 0, entonces la raíz se encuentra dentro del subintervalo inferior o izquierdo. 
+        Por lo tanto, haga xu = xr y vuelva al paso 2.
+        b) Si f(xl)f(xr) > 0, entonces la raíz se encuentra dentro del subintervalo superior o derecho. 
+        Por lo tanto, haga xl = xr y vuelva al paso 2.
+        c) Si f(xl)f(xr) = 0, la raíz es igual a xr; termina el cálculo.
+        </h4> 
+        <img src="/milestone/electronica/img/ejemplo2.png" alt="">
+        <br>
+        <table border="1" colspacing="0" cellspacing="0" style="width: 305px;">
+            <tr>
+                <th>Concepto</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>Valor inicial Inferior (xl): </td>
+                <td><input id="xl" name="low" size="17"> </td>
+            </tr>
+            <tr>
+                <td>Valor inicial Superior (xu): </td>
+                <td><input id="xu" name="up" size="17"> </td>
+            </tr>
+        </table>
+        <br>
+        <button type="button" onclick="bisecciones()">Presioname</button> 
+        <p id="sumando">Resultado: </p>
+        <script>
+            function bisecciones(){
+                var xl=parseInt(document.getElementById("xl").value);
+                var xu=parseInt(document.getElementById("xu").value);
+                var xrant=0;
+                var body=document.getElementsByTagName("body")[0];
+                var tabla=document.createElement("table");
+                var tblBody=document.createElement("tbody");
+                var hilera=document.createElement("tr");
+                
+                do{
+                var xr=(xu+xl)/2;
+                var error1=Math.abs(((xr-xrant)/xr));
+                var error=error1*100;
+                console.log("El valor de xr: " +xr);
+                console.log("El valor de xrant: " +xrant);
+                console.log("El valor del error: "+error);
+                var fxl=Math.log(xl);
+                var fxr=Math.log(xr);
+
+                if(fxr*fxl<0){
+                    xu=xr;
+                    xrant=xr;
+                    console.log("El valor de xu es: " +xu);
+                }
+                if(fxr*fxl>0){
+                    xl=xr;
+                    xrant=xr;
+                    console.log("El valor de xl es: " +xl);
+                }
+                if(fxr*fxl==0){
+                    console.log("Este es el tercer if ")
+                }
+                
+                var hilera = document.createElement("tr");
+
+                for (var j = 0; j < 1; j++) {
+                var celda = document.createElement("td");
+                var textoCelda = document.createTextNode("El valor de Xl: "+xl);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+
+                for (var k = 0; k < 1; k++) {
+                var celda = document.createElement("td");
+                var textoCelda = document.createTextNode("El valor de Xu: "+xu);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+
+                for (var l = 0; l < 1; l++) {
+                var celda = document.createElement("td");
+                var textoCelda = document.createTextNode("El valor de Xr: "+xr);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+                }
+                for (var m = 0; m < 1; m++) {
+                var celda = document.createElement("td");
+                var textoCelda = document.createTextNode("El valor de error: "+error);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+                }
+            }
+            tblBody.appendChild(hilera);
+        }
+        let text=xr;
+        document.getElementById("sumando").innerHTML = text;  
+    } while(error>=1);
+    tabla.appendChild(tblBody);
+    body.appendChild(tabla);
+    tabla.setAttribute("border", "1");
+}
+</script>
+         </div>
+        </div>
+
+
+
+</body>
+</html>
