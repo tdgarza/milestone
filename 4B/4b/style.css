@@ -15,6 +15,12 @@ titulo{
 	align-content: center;
                                                 
 }
+input:focus{
+	outline:4px solid blue;
+}
+hr{
+	color: black;
+}
 table{
 	margin-left: 200px;
 	background-color: grey; 

@@ -46,15 +46,30 @@
 	</p>
 		<p>Telefono: <input type="text" name="telefono" id="telefono" size="40">
 	</p>	
-	<p>Sexo: 
-		<morado><input type="radio" name="sexo" value="Hombre"> <rosa>Hombre</rosa></morado>
-		<input type="radio" name="sexo" value="mujer"><morado>Mujer</morado>	<br><br>
+	<p>Servilletas?: 
+		<morado><input type="radio" name="servilletas" value="si"> <rosa>Si</rosa></morado>
+		<input type="radio" name="servilletas" value="no"><morado>No</morado>	<br><br>
 	<p> Que vas a pedir: 
 		<select name="menu" id="menu">
-			<option value="hamburguesa">Hamburguesa</option>
-			<option value="Torta">Torta</option>
-			<option value="Tacos">Tacos</option>
+			<optgroup label="Lonches">
+				<option value="hamburguesa">Hamburguesa</option>
+				<option value="Torta">Torta</option>
+				<option value="Sandwich">Sandwich</option>
+				<option value="Torta Ahogada">Torta Ahogada</option>
+			</optgroup>
+			<optgroup label="Tacos">
+				<option value="Tacos Bistek">Tacos de Bistek</option>
+				<option value="Tacos al Pastor">Tacos al Pastor</option>
+				<option value="Tacos Campechanos">Tacos Campechanos</option>
+				<option value="Sincronizada">Sincronizada</option>
+			</optgroup>
 		</select>
+		<hr>
+		<h1 style="color: grey;">Complementos</h1>
+		<input type="checkbox" id="tomate" checked><label for="tomate" style="font-size: 20px;">Tomate</label><br>
+		<input type="checkbox" id="cebolla" ><label for="cebolla" style="font-size: 20px;">Cebolla</label><br>
+		<input type="checkbox" id="pepinillos" ><label for="pepinillos" style="font-size: 20px;">Penillos</label><br>
+		<input type="checkbox" id="pina" ><label for="pina" style="font-size: 20px;">Pina</label><br>
 	</p>
 		<input type="submit" value="Enviar">
 		<input type="reset" value="Borrar">
@@ -70,25 +85,16 @@
 			telefono:formData.get("telefono"),
 			direccion:formData.get("direccion"),
 			colonia:formData.get("colonia"),
-			sexo:formData.get("sexo"),
-			menu:formData.get("menu")
+			sexo:formData.get("servilletas"),
+			menu:formData.get("menu"),
+			tomate:document.getElementById("tomate").checked ? "Si" : "No",
+			cebolla:document.getElementById("cebolla").checked ? "Si" : "No",
+			pepinillos:document.getElementById("pepinillos").checked ? "Si" : "No",
+			pina:document.getElementById("pina").checked ? "Si" : "No"
 		};
 		localStorage.setItem("orden",JSON.stringify(orden));
 		window.location.href="pedidorealizado.html";
 	});
-
-	
 </script>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
