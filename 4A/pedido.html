@@ -62,12 +62,16 @@
            <input type="submit" value="Enviar"> 
            <input type="reset" value="Borrar">
     </form>
+    <button type="button" onclick="suma()">Presioname</button> 
+    <p id="sumando">Resultado: </p>
     <script>
+        var x;
         const form=document.getElementById("pedido");
         form.addEventListener("submit", function(event){
             event.preventDefault();
             const formData=new FormData(form);
             const orden={
+                
                 nombre:formData.get("nombre"),
                 apellido:formData.get("apellido"),
                 telefono:formData.get("telefono"),
@@ -84,7 +88,8 @@
             localStorage.setItem("orden",JSON.stringify(orden));
             window.location.href="pedidorealizado.html";
         });
-
+        let text=x;
+      document.getElementById("sumando").innerHTML = text;  
     </script>
 </body>
 </html>

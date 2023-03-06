@@ -59,81 +59,60 @@
       <table border="1" colspacing="0" cellspacing="0" style="width: 305px;">
           <tr>
               <th>Concepto</th>
+              <th>Valor inicial</th>
               
           </tr>
           <tr>
               <td>Valor inicial </td>
-              <td><input id="xl" name="low" size="17"> </td>
+              <td><input id="xi" name="low" size="17"> </td>
           </tr>
         
       </table>
       <br>
-      <button type="button" onclick="bisecciones()">Presioname</button> 
+      <button type="button" onclick="puntofijo()">Presioname</button> 
       <p id="sumando">Resultado: </p>
       <script>
-          function bisecciones(){
-              var xl=parseInt(document.getElementById("xl").value);
-              var xu=parseInt(document.getElementById("xu").value);
-              var xrant=0;
+          function puntofijo(){
+              var xi=parseInt(document.getElementById("xi").value);
               var body=document.getElementsByTagName("body")[0];
               var tabla=document.createElement("table");
               var tblBody=document.createElement("tbody");
               var hilera=document.createElement("tr");
               
               do{
-              var xr=(xu+xl)/2;
-              var error1=Math.abs(((xr-xrant)/xr));
-              var error=error1*100;
-              console.log("El valor de xr: " +xr);
-              console.log("El valor de xrant: " +xrant);
-              console.log("El valor del error: "+error);
-              var fxl=Math.log(xl);
-              var fxr=Math.log(xr);
+                var e=Math.E;
+                var error=0;
+                var error1=0;
+                var xii=Math.pow(e,-xi);
+          
 
-              if(fxr*fxl<0){
-                  xu=xr;
-                  xrant=xr;
-                  console.log("El valor de xu es: " +xu);
-              }
-              if(fxr*fxl>0){
-                  xl=xr;
-                  xrant=xr;
-                  console.log("El valor de xl es: " +xl);
-              }
-              if(fxr*fxl==0){
-                  console.log("Este es el tercer if ")
-              }
+              //var error1=Math.abs(((xr-xrant)/xr));
+              //var error=error1*100;
+              console.log("El valor de e: " +e);
+              console.log("El valor de xii: " +xii);
+             
+
+              
               
               var hilera = document.createElement("tr");
 
               for (var j = 0; j < 1; j++) {
               var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xl: "+xl);
+              var textoCelda = document.createTextNode("El valor de Xi: "+xi);
               celda.appendChild(textoCelda);
               hilera.appendChild(celda);
 
               for (var k = 0; k < 1; k++) {
               var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xu: "+xu);
+              var textoCelda = document.createTextNode("El error: "+error);
               celda.appendChild(textoCelda);
               hilera.appendChild(celda);
 
-              for (var l = 0; l < 1; l++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xr: "+xr);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-              }
-              for (var m = 0; m < 1; m++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de error: "+error);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-              }
+              
           }
           tblBody.appendChild(hilera);
       }
-      let text=xr;
+      let text=xii;
       document.getElementById("sumando").innerHTML = text;  
   } while(error>=1);
   tabla.appendChild(tblBody);
