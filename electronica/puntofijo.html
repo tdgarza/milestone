@@ -12,42 +12,81 @@
     <title>Falsa Posicion</title>
 </head>
 <body>
-    <div style="margin: 5px;">
-        <nav class="navbar navbar-light" style="background-color: #9bc6e5;">
+<!--Todo esto son los botones -->
+<div style="margin: 5px;">
+    <nav class="navbar navbar-light" style="background-color: #9bc6e5;">
 
-        <div class="container">
-        <a class="navbar-brand" href="index.html">Inicio</a>
-      
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="container">
+    <a class="navbar-brand" href="#">Inicio</a>
+  
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-          <ul class="nav navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Unidad 2
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="bisecciones.html">Metodo de la Biseccion</a><br>
-                  <a class="dropdown-item" href="reglafalsa.html">Regla Falsa</a><br>
-                  <a class="dropdown-item" href="newton.html">Metodo de Newton</a><br>
-                  <a class="dropdown-item" href="secante.html">Metodo de la Secante</a><br>
+      <ul class="nav navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Unidad 2
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/milestone/electronica/bisecciones.html">Metodo de la Biseccion</a><br>
+              <a class="dropdown-item" href="/milestone/electronica/reglafalsa.html">Regla Falsa</a><br>
+              <a class="dropdown-item" href="/milestone/electronica/metodonewton.html">Metodo de Newton</a><br>
+              <a class="dropdown-item" href="/">Metodo de la Secante</a><br>
 
-                </div>
-              </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Unidad 3
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a><br>
-                <a class="dropdown-item" href="#">Another action</a><br>
-                <a class="dropdown-item" href="#">Something else here</a><br>
-              </div>
-            </li>
-          </ul>
-        </div>
-        </div>
-      </nav>
+            </div>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 3
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="interpolacionlineal.html">Interpolacion Lineal</a><br>
+            <a class="dropdown-item" href="lagrange.html">Interpolacion de Lagrange</a><br>
+            <a class="dropdown-item" href="interpolacionnewton.html">Interpolacion Newton</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 4
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="newtoncoates.html">Integracion Newton-Coates</a><br>
+            <a class="dropdown-item" href="reglatrapecio.html">Regla Trapecial</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 5
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="gauss.html">Eliminacion Gaussiana</a><br>
+            <a class="dropdown-item" href="gaussjordan.html">Gauss-Jordan</a><br>
+            <a class="dropdown-item" href="seidel.html">Gauss-Seidel</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 6
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="gaussseidel.html">Gauss-Seidel</a><br>
+            <a class="dropdown-item" href="newtonraphson.html">Newton-Raphson</a><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unidad 7
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="euler.html">Metodo de Euler</a><br>
+            <a class="dropdown-item" href="runge.html">Metodo de Runge Kutta</a><br>
+            <a class="dropdown-item" href="dosecuaciones.html">Sistema de dos Ecuaciones</a><br>
+          </div>
+        </li>
+      </ul>
     </div>
+    </div>
+  </nav>
+</div>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4"><titulo>Iteracion de punto Fijo</titulo></h1>
@@ -70,7 +109,7 @@
       </table>
       <br>
       <button type="button" onclick="puntofijo()">Presioname</button> 
-      <p id="sumando">Resultado: </p>
+      <p style="background-color: steelblue;" id="sumando">Resultado: </p>
       <script>
           function puntofijo(){
               var xi=parseInt(document.getElementById("xi").value);
@@ -81,43 +120,38 @@
               
               do{
                 var e=Math.E;
-                var error=0;
-                var error1=0;
                 var xii=Math.pow(e,-xi);
-          
-
-              //var error1=Math.abs(((xr-xrant)/xr));
-              //var error=error1*100;
-              console.log("El valor de e: " +e);
-              console.log("El valor de xii: " +xii);
-             
-
-              
-              
-              var hilera = document.createElement("tr");
-
-              for (var j = 0; j < 1; j++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xi: "+xi);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-
-              for (var k = 0; k < 1; k++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El error: "+error);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-
-              
-          }
-          tblBody.appendChild(hilera);
-      }
+                var error1=Math.abs(((xii-xi)/xii));
+                var error=error1*100;
+                console.log("El valor de error: " +error);
+                console.log("El valor de xi: " +xi);
+                console.log("El valor de xii: " +xii);
+                xi=xii;
+                
+                var hilera = document.createElement("tr");
+                for (var j = 0; j < 1; j++) {
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode("El valor de Xi: "+xi);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                for (var k = 0; k < 1; k++) {
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode("El error: "+error);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+                tblBody.appendChild(hilera);
+            }
       let text=xii;
       document.getElementById("sumando").innerHTML = text;  
   } while(error>=1);
   tabla.appendChild(tblBody);
   body.appendChild(tabla);
+
+  tabla.setAttribute("align", "center");
   tabla.setAttribute("border", "1");
+  tabla.setAttribute("id", tableId);
+  tabla.setAttribute("style", "background:#022340");
 }
 </script>
        </div>

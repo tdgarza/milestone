@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Pagina de Analisis Numerico</title>
+    <title>Metodo de Newton</title>
 </head>
 <body>
-<!--Todo esto son los botones -->
+    <!--Todo esto son los botones -->
   <div style="margin: 5px;">
     <nav class="navbar navbar-light" style="background-color: #9bc6e5;">
 
@@ -87,84 +87,68 @@
     </div>
   </nav>
 </div>
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Analisis Numerico</h1>
-      <p class="lead">Hoy en día, el uso de técnicas numéricas es crucial en el análisis y resolución de sistemas eléctricos. Debido al significativo esfuerzo computacional que se requiere en la mayoría de los métodos, su implementación está fuertemente ligada al uso de computadoras. De hecho, sin el avance en el campo de la informática, sería difícil imaginar el grado actual de empleo de las técnicas numéricas en la ingeniería.</p>
-    </div>
-  </div>
-<!--hasta aqui son los botones  esto lo voy a copiar en todas las paginas para que quede igual-->
+      <h1 class="display-4"><titulo>Metodo de Newton</titulo></h1>
+      <p class="lead"> <h3>Tema 4</h3></p>
+  
 
-  <!--Esto lo baje de bootstrap para poner un cuadro donde pongo la informacion-->
-<div class="container">
-    <div class="row">
-    <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/milestone/metodos.jpg" style="height:150px; width: 180px;" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold;">Introducción a los métodos numéricos</h5>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<!--Aqui acaba-->
-
-<div class="row">
-    <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/milestone/02.jpg" style="height:150px; width: 180px;" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold;">Solución de ecuaciones no lineales de una variable</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="row">
-    <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/milestone/03.jpg" style="height:150px; width: 180px;" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold;">Solución de sistemas de ecuaciones lineales algebraicas en la resolución de problemas de ingeniería.</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="row">
-    <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/milestone/Integral_example.png" style="height:150px; width: 180px;" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold;">Integración numérica</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="row">
-    <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/milestone/04.jpg" style="height:150px; width: 180px;" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold;">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="row">
-    <div class="col-sm-2">
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/milestone/05.jpg" style="height:150px; width: 180px;" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-</div>
-
+    <img src="/milestone/electronica/img/ejerciciofalsa.png" style="width:200px" alt="">
+    <br>
+    <table border="1" colspacing="0" cellspacing="0" style="width: 305px;">
+        <tr>
+            <th>Concepto</th>
+            <th>Valor inicial</th>
+            
+        </tr>
+        <tr>
+            <td>Valor inicial </td>
+            <td><input id="xi" name="low" size="17"> </td>
+        </tr>
+      
+    </table>
+    <br>
+    <button type="button" onclick="metodonewton()">Presioname</button> 
+    <p id="sumando">Resultado: </p>-hasta aqui son los botones  esto lo voy a copiar en todas las paginas para que quede igual-->
+    <script>
+        function metodonewton(){
+            var xi=parseInt(document.getElementById("xi").value);
+            var body=document.getElementsByTagName("body")[0];
+            var tabla=document.createElement("table");
+            var tblBody=document.createElement("tbody");
+            var hilera=document.createElement("tr");
+            
+            do{
+              var e=Math.E;
+              var xii=Math.pow(e,-xi);
+              var error1=Math.abs(((xii-xi)/xii));
+              var error=error1*100;
+              console.log("El valor de error: " +error);
+              console.log("El valor de xi: " +xi);
+              console.log("El valor de xii: " +xii);
+              
+              var hilera = document.createElement("tr");
+              for (var j = 0; j < 1; j++) {
+                  var celda = document.createElement("td");
+                  var textoCelda = document.createTextNode("El valor de Xi: "+xi);
+                  celda.appendChild(textoCelda);
+                  hilera.appendChild(celda);
+              for (var k = 0; k < 1; k++) {
+                  var celda = document.createElement("td");
+                  var textoCelda = document.createTextNode("El error: "+error);
+                  celda.appendChild(textoCelda);
+                  hilera.appendChild(celda);
+              }
+              tblBody.appendChild(hilera);
+          }
+    let text=xii;
+    document.getElementById("sumando").innerHTML = text;  
+} while(error>=1);
+tabla.appendChild(tblBody);
+body.appendChild(tabla);
+tabla.setAttribute("border", "1");
+}
+</script>
 </body>
 </html>
