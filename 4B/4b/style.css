@@ -1,5 +1,5 @@
 body{
-	background-color: #ef0606;
+	background-color: #7BDFF2;
 }
 .center{
 	display: block;
@@ -8,6 +8,11 @@ body{
 	width: 50%;
 	width: 500px;
 
+
+}
+nav{
+	color: white;
+	background-color: white;
 }
 titulo{
 	font-family: 'Gunmetal', sans-serif;
@@ -23,7 +28,7 @@ hr{
 }
 table{
 	margin-left: 200px;
-	background-color: grey; 
+	background-color: #F2B5D4; 
 	color: white; 
 	text-align: center; 
 	width: 700px;

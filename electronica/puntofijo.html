@@ -109,7 +109,7 @@
       </table>
       <br>
       <button type="button" onclick="puntofijo()">Presioname</button> 
-      <p style="background-color: steelblue;" id="sumando">Resultado: </p>
+      <p style="background-color: rgb(215, 35, 146); color: white;" id="sumando">Resultado: </p>
       <script>
           function puntofijo(){
               var xi=parseInt(document.getElementById("xi").value);
@@ -147,11 +147,10 @@
   } while(error>=1);
   tabla.appendChild(tblBody);
   body.appendChild(tabla);
-
+//atributos de la tabla, como el posicionamiento, el grosor de los bordes y el color de fondo
   tabla.setAttribute("align", "center");
   tabla.setAttribute("border", "1");
-  tabla.setAttribute("id", tableId);
-  tabla.setAttribute("style", "background:#022340");
+  tabla.setAttribute("style", "background:#339922");
 }
 </script>
        </div>

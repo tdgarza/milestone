@@ -34,46 +34,30 @@
 			</div>
 		</nav>
 	</div>
-<titulo>MENU</titulo>
+<titulo>MENU DEL RESTAURANT</titulo>
 
-	<table border=1; >
-	<tr>
-		<th>Imagen</th>
-		<th>Nombre</th>
-		<th>Ingredientes</th>
-		<th>Precio</th>
-	</tr>
-	<tr>
-	<td><img src="4.jpg" style="width:100px"></td>
-		<td><hamburguesa>Hamburguesa</hamburguesa></td>
-		<td>Lechuga, Carne, Queso, Mayonesa</td>
-		<td>$100</td>
-	</tr>
-	<tr>
-		<td><img src="5.jpg" style="width:100px"></td>
-		<td>Tacos Piratas</td>
-		<td>Queso, pina, carne, trompo</td>
-		<td>$150</td>
-	</tr>
-	<tr>
-		<td><img src="6.jpg" style="width:100px"></td>
-		<td>Tacos de Bistek</td>
-		<td>Carne y queso</td>
-		<td>$150</td>
-	</tr>
-	<tr>
-		<td><img src="7.jpg" style="width:100px"></td>
-		<td>Torta ahogada</td>
-		<td>Algo que llevan las tortas ahogadas</td>
-		<td>$150</td>
-	</tr>
-	<tr>
-		<td><img src="7.jpg" style="width:100px"></td>
-		<td>Torta </td>
-		<td>Algo que llevan las tortas ahogadas</td>
-		<td>$150</td>
-	</tr>
-	</table>
+	<div id="menu"></div>
+	<script type="text/javascript">
+		fetch('menu.json')
+		.then(response=>response.json())
+		.then(data=>{
+			const menu=document.getElementById('menu');
+			data.menu.forEach(item=>{
+				const container=document.createElement('div');
+				container.classList.add('item');
+				container.innerHTML=`
+				<img src="${item.imagen}" alt="${item.nombre}">
+				${item.nombre}<br>
+				<p>${item.descripcion}</p>
+				<p class="precio">${item.precio.toFixed(2)} pesos</p>
+
+				`;
+
+				menu.appendChild(container);
+
+			});
+		});
+	</script>
 
 </body>
 </html>
