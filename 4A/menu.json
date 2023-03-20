@@ -1,0 +1,18 @@
+{"menu":[
+    {
+        "id":1,
+        "nombre":"Hamburguesa",
+        "descripcion":"Es una carne y papas",
+        "precio":100,
+        "imagen":"img/hamburguesa.jpg"
+    },
+    {
+        "id":2,
+        "nombre":"Sopes",
+        "descripcion":"Es una hamburguesa simple con carne y papas",
+        "precio":80,
+        "imagen":"img/sopes.jpg"
+
+    }
+]
+}

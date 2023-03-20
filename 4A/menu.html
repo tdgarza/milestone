@@ -28,38 +28,27 @@
         </nav>
     </div> 
     <h1 style="text-align: center;">Menu</h1>
-    <table border="1" cellspacing="5" style="color:#440099;">
-        <tr>
-            <th>Imagen</th>
-            <th>Producto</th>
-            <th>Ingredientes</th>
-            <th>Precio</th>
-        </tr>
-        <tr>
-            <td><img src="1.jpg" style="width: 150px; height:150px"></td>
-            <td class="hamburguesa">Hamburguesa</td>
-            <td>
-            <li>Queso</li>
-            <li>Doble Carne</li>
-            <li>Lechuga</li>
-            <li>Tomate</li>
-            <li>Aguacate</li>
-            </td>
-            <td>$150</td>
-        </tr>
-        <tr>
-            <td><img src="2.jpg" style="width: 150px; height:150px"></td>
-            <td>Tacos Piratas</td>
-            <td>
-            <li>Queso</li>
-            <li>Trompo</li>
-            <li>Bistek</li>
-            <li>Pina</li>
-            <li>Aguacate</li>
-            </td>
-            <td>$250</td>
-        </tr>
-    </table>
-    
+    <div id="menu"></div>
+    <script>
+        fetch('menu.json')
+        .then(response => response.json())
+        .then(data =>{
+            const menu = document.getElementById('menu');
+            data.menu.forEach(item =>{
+                const container = document.createElement('div');
+                container.classList.add('item');
+                container.innerHTML=
+                `<img src="${item.imagen}" alt="{item.nombre}">
+                ${item.id}
+                ${item.nombre}
+                ${item.descripcion}
+                ${item.precio.toFixed(2)} pesos
+                
+                `;
+
+                menu.appendChild(container);
+            });
+        });
+    </script>
 </body>
 </html>
