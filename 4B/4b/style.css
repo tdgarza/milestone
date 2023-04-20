@@ -53,3 +53,23 @@ img{
 	border-radius: 10%;
 	box-shadow: black;
 }
+table{
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+}
+th, td{
+	text-align: left;
+	padding: 8px;
+}
+th{
+	background-color: black;
+	color: white;
+}
+tr:nth-child(even){
+	background-color: blue;
+}
+img{
+	width: 100px;
+	height: 100px;
+}

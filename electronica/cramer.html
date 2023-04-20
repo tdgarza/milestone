@@ -78,73 +78,26 @@
               var a12=parseInt(document.getElementById("a12").value);
               var a13=parseInt(document.getElementById("a13").value);
               var a14=parseInt(document.getElementById("a14").value);
-              
-              var xrant=0;
-              var body=document.getElementsByTagName("body")[0];
-              var tabla=document.createElement("table");
-              var tblBody=document.createElement("tbody");
-              var hilera=document.createElement("tr");
-              
-              do{
-              var xr=(xu+xl)/2;
-              var error1=Math.abs(((xr-xrant)/xr));
-              var error=error1*100;
-              console.log("El valor de xr: " +xr);
-              console.log("El valor de xrant: " +xrant);
-              console.log("El valor del error: "+error);
-              var fxl=Math.log(xl);
-              var fxr=Math.log(xr);
+              var a21=parseInt(document.getElementById("a21").value);
+              var a22=parseInt(document.getElementById("a22").value);
+              var a23=parseInt(document.getElementById("a23").value);
+              var a24=parseInt(document.getElementById("a24").value);
+              var a31=parseInt(document.getElementById("a31").value);
+              var a32=parseInt(document.getElementById("a32").value);
+              var a33=parseInt(document.getElementById("a33").value);
+              var a34=parseInt(document.getElementById("a34").value);
+          
+      var detA=(a11*a22*a33)+(a12*a23*a31)+(a13*a21*a32)-(a31*a22*a13)-(a32*a23*a11)-(a33*a21*a12);
+      console.log("determinante A: " +detA);
+      var x1 = (a14*(a22*a33-a23*a32) + a24*(a23*a31-a21*a33) + a34*(a21*a32-a22*a31))/detA;
+      console.log("determinante X1: " +x1);
+      var x2 = (a14*(a13*a32-a12*a33) + a24*(a11*a33-a13*a31) + a34*(a12*a31-a11*a32))/detA;
+      console.log("determinante X2: " +x2);
+      var x3 = (a14*(a12*a23-a13*a22) + a24*(a13*a21-a11*a23) + a34*(a11*a22-a12*a21))/detA;
+      console.log("determinante X3: " +x3);
 
-              if(fxr*fxl<0){
-                  xu=xr;
-                  xrant=xr;
-                  console.log("El valor de xu es: " +xu);
-              }
-              if(fxr*fxl>0){
-                  xl=xr;
-                  xrant=xr;
-                  console.log("El valor de xl es: " +xl);
-              }
-              if(fxr*fxl==0){
-                  console.log("Este es el tercer if ")
-              }
-              
-              var hilera = document.createElement("tr");
-
-              for (var j = 0; j < 1; j++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xl: "+xl);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-
-              for (var k = 0; k < 1; k++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xu: "+xu);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-
-              for (var l = 0; l < 1; l++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de Xr: "+xr);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-              }
-              for (var m = 0; m < 1; m++) {
-              var celda = document.createElement("td");
-              var textoCelda = document.createTextNode("El valor de error: "+error);
-              celda.appendChild(textoCelda);
-              hilera.appendChild(celda);
-              }
-          }
-          tblBody.appendChild(hilera);
-      }
-      let text=xr;
-      document.getElementById("sumando").innerHTML = text;  
-  } while(error>=1);
-  tabla.appendChild(tblBody);
-  body.appendChild(tabla);
-  tabla.setAttribute("border", "1");
-}
+      
+    }
 </script>
        </div>
       </div>
