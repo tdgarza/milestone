@@ -11,7 +11,7 @@
 </head>
 <body>
     <div style="margin: 24px;">
-        <nav class="navbar navbar-inverse navbar-stick-static-top">
+        <nav class="navbar navbar-light" style="background-color: #01133d;">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Inicio</a>
                 <ul class="nav navbar-nav">
@@ -35,7 +35,9 @@
      <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4" style="color: #3d3ded;">Fisica 1</h1>
-          <p class="lead">Los elementos que se consideran necesarios para facilitar el aprendizaje de conceptos y la aplicación de modelos matemáticos en el campo de la Física, son algunos conceptos de las matemáticas como: sistemas de unidades, magnitudes escalares, magnitudes vectoriales, notación científica, análisis dimensional, vectores, graficación y algebra vectorial. </p>
+        
+
+          <p class="lead" style="font-family: Georgia, 'Times New Roman', Times, serif;">Los elementos que se consideran necesarios para facilitar el aprendizaje de conceptos y la aplicación de modelos matemáticos en el campo de la Física, son algunos conceptos de las matemáticas como: sistemas de unidades, magnitudes escalares, magnitudes vectoriales, notación científica, análisis dimensional, vectores, graficación y algebra vectorial. </p>
 
           <form id="formulario">
             <label for="distancia">Distancia:</label>
@@ -136,19 +138,13 @@
         }
         
       </script>
-      <footer>
-        <h2>Contactame</h2>
-        <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales: </p>
 
-        <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="http://www.instagram/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="http://www.discord.com/miperfil" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="http://www.pinterest.com/miperfil" target="_blank"><i class="fab fa-pinterest"></i></a>
-        <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </footer>
-      <script>
-        
-      </script>
+<div id="footer"></div>
+<script>
+$(function(){
+  $("#footer").load("/4A/footer.html"); 
+});
+</script>
+
 </body>
 </html>

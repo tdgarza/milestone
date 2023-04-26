@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>footer</title>
+</head>
+<body>
+    <footer>
+        <style>
+            footer{
+                background-color: #01133d ;
+                color: #fff;
+                padding: 30px 0;
+            }
+            .container{
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            .footer-content{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .footer-section{
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .about{
+                text-align: center;
+            }
+            .about h2{
+                margin-bottom: 20px;
+            }
+            .about p{
+                font-size: 18px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+            .contact-links{
+                display: flex;
+                justify-content: center;
+            }
+            .contact-links a{
+                display: inline-block;
+                color: #fff;
+                font-size: 24px;
+                margin: 0 10px;
+                transition: all 0.3s ease;
+            }
+            .contact-links a:hover{
+                transform: translateY(-5px);
+            }
+        </style>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>Contactame</h2>
+                    <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales: </p>
+                    <div class="contact-links">
+                        <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="http://www.instagram/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="http://www.discord.com/miperfil" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="http://www.pinterest.com/miperfil" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+      <script>
+        //este siguiente codigo es para que los enlaces se abran en una nueva pestana
+        const redessociales=document.querySelectorAll('.contact-links');
+        redessociales.forEach(link =>{
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                window.open(link.href, '_blank');
+            });
+        });
+      </script>
+      </footer>
+</body>
+</html>
