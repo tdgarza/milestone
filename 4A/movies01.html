@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>Movies API</title>
+</head>
+<body>
+    <div style="margin: 24px;">
+        <nav class="navbar navbar-inverse navbar-stick-static-top">
+            <div class="container">
+                <a class="navbar-brand" style="color: red;" href="index.html">Inicio</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="menu.html">Menu</a>
+                    </li>
+                    <li>
+                        <a href="pedido.html">Pedido</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="apimovies.html">Movies</a>
+                    </li>
+                    <li class="active">
+                        <a href="movies.html">Movies segunda</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div> 
+    <div class="container">
+        <h1>La pagina de Tomas Garza de peliculas</h1>
+        <form id="form">
+            <input type="text" id="search" placeholder="Buscame la pelicula...">
+            <input type="submit" value="Search">
+        </form>
+        <section id="main" class="movies"></section>
+    </div>
+    <script>
+    //En esta línea se define la URL de la API para obtener la lista de películas.
+    const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1';
+     //Esta línea define la URL de la API para obtener las imágenes de las películas.
+    const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
+    //En esta línea se define la URL de la API para buscar películas.
+    const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="';
+       
+       //En las siguientes tres lineas se obtienen los elementos HTML con los que interactua el codigo
+       const main = document.getElementById('main');
+       const form = document.getElementById('form');
+       const search = document.getElementById('search');
+       //Esta linea llama a la funcion getMovies para obtener la lista de peliculas de iniciales
+       getMovies(API_URL);
+       //Esta funcion utiliza fetch para obtener la informacion de la API y luego utiliza await para esperar a que la informacion sea procesada. Finalmente, llama a la funcion showMovies para mostrar la lista de peliculas en el DOM
+        async function getMovies(url){
+        const res= await fetch(url);
+        const data=await res.json();
+        showMovies(data.result);
+       }
+       //Esta funcion crea los elementos HTML para mostrar cada pelicula en la lista. Utiliza la informacion de la pelicula para crear los elementos y luego los agrega al DOM
+       function showMovies(movies){
+        main.innerHTML='';
+        movies.forEach(movies) => {
+            const { title, poster_path, vote_average, overview, release_date} = movie;
+            const movieEl = document.createElement('div');
+
+            movieEl.classList.add('movie');
+            movieEl.innerHTML = `<img src="${IMG_PATH + poster_path}" alt = "${title}"
+            <div class = "movie-info">
+                <h3>${title}
+                    <span class="${getClassByRate(vote_average)}">${vote_average}</div>
+                        <div class="overview">
+                           <h3> Overview </h3>
+                            ${Overview} 
+                            <h3>Release Date</h3>
+                            ${release_date}`
+            main.appendChild(movieEl);
+        }
+       }
+       //Esta funcion devuelve la clase CSS correspondiente para el puntaje de la pelicula. La clase se utiliza para mostrar un color diferente segun el puntaje.
+       
+    </script>
+    <style>
+        footer{
+    background-color: #3D348B ;
+    color: #fff;
+    padding: 30px 0;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-section{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.about{
+    text-align: center;
+}
+.about h2{
+    margin-bottom: 20px;
+}
+.about p{
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.about crush{
+    color: red;
+}
+
+.contact-links{
+    display: flex;
+    justify-content: center;
+}
+.contact-links a{
+    display: inline-block;
+    color: rgb(230, 46, 159);
+    font-size: 24px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+.contact-links a:hover{
+    transform: translateY(15px);
+}
+    </style>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>Contactame</h2>
+
+                    <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales: </p>
+                    <div class="contact-links">
+                        <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/amigo_de_jesus_/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="http://www.discord.com/miperfil" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="http://www.pinterest.com/miperfil" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+      <script>
+        //este siguiente codigo es para que los enlaces se abran en una nueva pestana
+        const redessociales=document.querySelectorAll('.contact-links');
+        redessociales.forEach(link =>{
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                window.open(link.href, '_blank');
+            });
+        });
+      </script>
+    </footer>
+</body>
+</html>
