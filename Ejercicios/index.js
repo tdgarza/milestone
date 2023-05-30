@@ -1,11 +1,9 @@
 // Este código es un servidor de Node.js que utiliza la librería Express. Express es un framework de aplicaciones web para Node.js que proporciona una serie de funcionalidades útiles para crear aplicaciones web y APIs.
 // En este código, se hacen varias cosas:
-
 const express = require('express');
 const app = express();
 const path = require('path');
 const router = express.Router();
-
 
 // Se importa la librería Express y se crea una aplicación de Express llamada "app".
 // Se importa el módulo "path" de Node.js y se crea una instancia de la clase Router de Express.
