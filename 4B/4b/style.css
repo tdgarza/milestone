@@ -7,8 +7,6 @@ body{
 	margin-right: auto;
 	width: 50%;
 	width: 500px;
-
-
 }
 .navbar-stick-static-top {
 	background-color:#9933ff !important;
@@ -72,4 +70,22 @@ tr:nth-child(even){
 img{
 	width: 100px;
 	height: 100px;
+}
+video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.titulo{
+	font-family: 'Modern LED Board-7', sans-serif;
+	font-size: 80px;
+	background: black;
+	text-align: center;
+	font-weight: 200;
+	top: 0PX;
+	height: 300PX;
+	mix-blend-mode: multiply;
 }

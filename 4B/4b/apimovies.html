@@ -78,9 +78,49 @@
         const data = await res.json();
         showMovies(data.results);
     }
-//Esta funcion crea lo elemntos HTML para mostrar cada pelicula en la lista. Utiliza la informacion de la pelicula para crear los elementos y luego los agrega al DOM (modelo de objeto de documento, que es una interfaz de programacion para los documentos HTML)
-
-</script>
+// esta funcion crea los elementos HTML para mostrar cada una de las peliculas en la lista. Utiliza informacion de la pelicula para crear los elementos y luego los agrega al DOM
+function showMovies(movies){
+  main.innerHTML='';
+  movies.forEach((movie) => {
+    const {title, poster_path, vote_average, overview, release_date} = movie;
+    const movieEL = document.createElement('div');
+    
+    movieEl.classList.add('movie');
+    movieEl.innerHTML = ` <img src="${IMG_PATH + poster_path}" alt ="${title}">
+    <div class = "movie-info">
+    <h3>${title}</h3>
+    <span class = "${getClassByRate(vote_average)}">${vote_average}</span>
+    </div>
+    <div class = "overview">
+      <h3>Overview</h3>
+      ${overview}
+      <h3>Release Date</h3>
+      ${release_date}</div>
+    `
+      main.appendChild(movieEl);
+  })
+}
+//Esta funcion devuelve la clase CSS correspondiente para el puntaje de la pelicula. La clase se utuliza para mostrar un color diferente segun el puntaje.
+    function getClassByRate(vote){
+      if(vote >= 8){
+        return 'green'
+      } else if (vote >= 5){
+        return 'orange'
+      } else {
+        return 'red'
+      }
+    }
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const searchTerm = search.value;
+      if(searchTerm && searchTerm != ''){
+        getMovies(SEARCH_API + searchTerm)
+        search.value = '';
+      } else {
+        window.location.reload();
+      }
+    })
+    </script>
 <!-- Aqui pongo el Footer-->
 <footer>
     <div class="container">

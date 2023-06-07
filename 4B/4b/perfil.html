@@ -6,10 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
- 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="footer.css">
+   <link href="https://fonts.cdnfonts.com/css/modern-led-board-7" rel="stylesheet">
    <title>Remy Lebeau</title>
 </head>
 <body>
+    <div style="margin:24px;">
+		<nav class="navbar navbar-light" style="background-color: #3D348B;">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Inicio</a>
+				<ul class="nav navbar-nav">
+					<li >
+						<a href="menu.html">Menu</a>
+					</li>
+					<li>
+						<a href="formulario.html">Formulario</a>
+					</li>
+					<li>
+						<a href="resultado.html">Resultado</a>
+					</li>
+					<li>
+						<a href="contacto.html">Contacto</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+</div>
    <table style="background-color: rgba(255, 255, 255, 0.904); font-family: Verdana, Geneva, Tahoma, sans-serif; width: 900px; position: center;">
     <tr>
         <td>
@@ -88,6 +117,35 @@
         </td>
     </tr>
     </table>
-    
+    <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <h2>Contactame</h2>
+              <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales:</p>
+              
+              <div class="contact-links">
+                <a href="perfil.html" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+                <a href="http://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <script type="text/javascript">
+          //con lo siguiente, hare que los links de las paginas se abran mediante Javascript en una pagina nueva
+        const socialnetworks = document.querySelectorAll('.contact-links a');
+        socialnetworks.forEach(link => {
+          link.addEventListener('click', e => {
+            e.preventDefault();
+            window.open(link.href, '_blank');
+          });
+        });
+      </script>
+      </footer>
 </body>
 </html>
