@@ -3,26 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="quiz.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <title>Quiz App</title>
   </head>
   <body>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-* {
-  box-sizing: border-box;
-}
 
 body {
   background-color: #b8c6db;
   background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
   font-family: 'Poppins', sans-serif;
-  display: flex;
+
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  
   overflow: hidden;
   margin: 0;
 }
@@ -79,21 +78,32 @@ button:focus {
   outline: none;
   background-color: #5e3370;
 }
-.image-container {
-          text-align: center;
-          padding: 2rem;
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 10px;
-        }
     </style>
-    <div class="quiz-container" id="quiz">
-      <div class="quiz-header">
-        <div class="image-container">
-            <img src="ruta-de-la-imagen.jpg" alt="Imagen" id="question-image">
+    <nav class="navbar navbar-inverse navbar-stick-static-top">
+      <div class="container">
+        <a class="navbar-brand" style="color: rgb(133, 37, 244);" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="pedido.html">Pedido</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+          <li>
+            <a href="apimovies.html">Movies</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+          <div class="image-container">
+            <img src="imagen.jpg" alt="Imagen" id="question-image" style="width: 200px; height:200px;">
           
         <h2 id="question">Question text</h2>
         <ul>
@@ -123,40 +133,55 @@ button:focus {
     <script>
         const quizData = [
     {
-        question: "Which language runs in a web browser?",
+        question: "¿Quién es el alter ego de Iron Man?",
         image: "quiz1.jpg",
-        a: "Java",
-        b: "C",
-        c: "Python",
-        d: "JavaScript",
-        correct: "d",
-    },
-    {
-        question: "What does CSS stand for?",
-        image: "quiz2.jpg",
-        a: "Central Style Sheets",
-        b: "Cascading Style Sheets",
-        c: "Cascading Simple Sheets",
-        d: "Cars SUVs Sailboats",
+        a: "Bruce Wayne",
+        b: "Tony Stark",
+        c: "Peter Parker",
+        d: "Clark Kent",
         correct: "b",
     },
     {
-        question: "What does HTML stand for?",
-        image: "quiz3.jpg",
-        a: "Hypertext Markup Language",
-        b: "Hypertext Markdown Language",
-        c: "Hyperloop Machine Language",
-        d: "Helicopters Terminals Motorboats Lamborginis",
+      /*
+
+¿Cuál es el nombre real de Black Widow? a) Wanda Maximoff b) Natasha Romanoff c) Carol Danvers d) Diana Prince
+
+¿Cuál fue el primer evento moderno de Marvel en el que se lanzó una serie limitada separada y luego todas las demás conexiones siguieron desde allí? a) Secret Wars b) Civil War c) House of M d) Infinity Gauntlet
+
+¿En qué evento Thanos usa el poder de las Gemas del Infinito para convertirse en Ser Supremo? a) Secret Wars b) Civil War c) House of M d) Infinity Gauntlet
+
+¿En qué evento los héroes están divididos cuando el gobierno de los EE. UU. aprueba la Ley de Registro Superhumano? a) Secret Wars b) Civil War c) House of M d) Infinity Gauntlet
+
+¿En qué evento Scarlet Witch crea un mundo donde los mutantes están a cargo y los humanos son ciudadanos de segunda clase? a) Secret Wars b) Civil War c) House of M d) Infinity Gauntlet
+
+¿En qué evento Hulk regresa a la Tierra para vengarse de aquellos responsables después de su exilio al espacio? a) Secret Wars b) Civil War c) House of M d) World War Hulk
+
+Las respuestas correctas son: 1.b, 2.a, 3.a, 4.a, 5.b, 6.a, 7.d, 8.b, 9.c, 10.d.*/
+        question: "¿Quién es el alter ego de Ant-Man?",
+        image: "quiz2.jpg",
+        a: "Scott Lang",
+        b: "Bruce Banner",
+        c: "Steve Rogers",
+        d: "Tony Stark",
         correct: "a",
     },
     {
-        question: "What year was JavaScript launched?",
+        question: "¿Quién es el alter ego de Captain Marvel?",
+        image: "quiz3.jpg",
+        a: "Carol Danvers",
+        b: "Natasha Romanoff",
+        c: "Wanda Maximoff",
+        d: "Diana Prince",
+        correct: "a",
+    },
+    {
+        question: "¿Quién es el alter ego de Star-Lord?",
         image: "quiz4.jpg",
-        a: "1996",
-        b: "1995",
-        c: "1994",
-        d: "none of the above",
-        correct: "b",
+        a: "Peter Quill",
+        b: "Peter Parker",
+        c: "Bruce Banner",
+        d: "Tony Stark",
+        correct: "a",
     },
 ];  // Un array que contiene los datos del cuestionario
 
@@ -165,6 +190,8 @@ const answerEls = document.querySelectorAll('.answer');  // Obtiene todos los el
 const questionEl = document.getElementById('question');  // Obtiene el elemento HTML con el id "question"
 const a_text = document.getElementById('a_text');  // Obtiene el elemento HTML con el id "a_text"
 const b_text = document.getElementById('b_text');  // Obtiene el elemento HTML con el id "b_text"
+const c_text = document.getElementById('c_text');  // Obtiene el elemento HTML con el id "c_text"
+const d_text = document.getElementById('d_text');  // Obtiene el elemento HTML con el id "d_text"
 const submitBtn = document.getElementById('submit');  // Obtiene el elemento HTML con el id "submit"
 
 let currentQuiz = 0;  // Variable para realizar un seguimiento de la pregunta actual del cuestionario
@@ -178,6 +205,9 @@ function loadQuiz() {
     questionEl.innerText = currentQuizData.question;  // Muestra la pregunta actual en el elemento HTML correspondiente
     a_text.innerText = currentQuizData.a;  // Muestra la opción de respuesta A en el elemento HTML correspondiente
     b_text.innerText = currentQuizData.b;  // Muestra la opción de respuesta B en el elemento HTML correspondiente
+    c_text.innerText = currentQuizData.c;  // Muestra la opción de respuesta C en el elemento HTML correspondiente
+    d_text.innerText = currentQuizData.d;  // Muestra la opción de respuesta D en el elemento HTML correspondiente
+
     const questionImage = document.getElementById("question-image");
     questionImage.src = currentQuizData.image;
 
@@ -212,7 +242,7 @@ submitBtn.addEventListener('click', () => {
             loadQuiz()
         } else {
             quiz.innerHTML = `
-                <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+                <h2>Contestaste ${score}/${quizData.length} de preguntas correctamente</h2>
 
                 <button onclick="location.reload()">Reload</button>
             `
@@ -220,5 +250,7 @@ submitBtn.addEventListener('click', () => {
     }
 })
     </script>
+
+
   </body>
 </html>
